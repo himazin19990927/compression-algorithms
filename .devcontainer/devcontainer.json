@@ -1,0 +1,18 @@
+{
+	"name": "Existing Dockerfile",
+	"context": "..",
+	"dockerFile": "../Dockerfile",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools",
+				"xaver.clang-format",
+				"kaiwood.center-editor-window"
+			]
+		}
+	},
+	"settings": {
+		"clang-format.executable": "clang-format-11",
+		"clang-format.language.cpp.style": "{ BasedOnStyle: LLVM, BreakBeforeBraces: Attach, SpaceBeforeParens: Never, IndentWidth: 4, AllowShortBlocksOnASingleLine: false, AllowShortFunctionsOnASingleLine: None }"
+	}
+}
