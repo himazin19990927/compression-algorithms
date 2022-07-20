@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef unsigned char byte;
+typedef unsigned char BYTE;
 
 int decode_data(FILE *fp_input, FILE *fp_output);
 

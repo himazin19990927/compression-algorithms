@@ -3,9 +3,9 @@
 
 #define BUFFER_SIZE 102400
 
-typedef unsigned char byte;
+typedef unsigned char BYTE;
 
-void encode_data(FILE *fp, byte *datas, int data_size);
+void encode_data(FILE *fp, BYTE *datas, int data_size);
 
 int main(int argc, char *argv[]) {
     if (argc < 3) {
@@ -46,7 +46,7 @@ int main(int argc, char *argv[]) {
 // datasの大きさはdata_sizeで指定する
 // ラン長の最大値はlimitまでに制限する
 // 戻り地は、次に処理対象となるデータの位置
-int get_run_length(byte *datas, int x, int data_size, int limit, int *run,
+int get_run_length(BYTE *datas, int x, int data_size, int limit, int *run,
                    int *code) {
     // 処理中のデータ位置
     int processing_point = x;
@@ -65,7 +65,7 @@ int get_run_length(byte *datas, int x, int data_size, int limit, int *run,
 }
 
 // ランレングス圧縮して、結果をfpで指定されるファイルに出力する
-void encode_data(FILE *fp, byte *datas, int data_size) {
+void encode_data(FILE *fp, BYTE *datas, int data_size) {
     int processing_point = 0;
     int run, code;
     while (processing_point < data_size) {
