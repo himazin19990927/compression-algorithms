@@ -28,8 +28,15 @@ int main(int argc, char *argv[]) {
     for (int i = 0; i < data_size; i++) {
         if (hist.data[i] > 0) {
             char c = (char)i;
+            auto data = tree.encode(c);
             std::cout << c << ": ";
-            tree.encode(c);
+            for (bool d : data) {
+                if (d) {
+                    std::cout << 1;
+                } else {
+                    std::cout << 0;
+                }
+            }
             std::cout << std::endl;
         }
     }

@@ -27,7 +27,7 @@ class HuffmanTree {
     int push_node(Node node);
 
     void show();
-    void encode(char character);
+    std::vector<bool> encode(char character);
 };
 
 HuffmanTree make_huffman_tree(const Histgram &histgram);

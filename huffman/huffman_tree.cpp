@@ -73,7 +73,7 @@ void HuffmanTree::show() {
     }
 }
 
-void HuffmanTree::encode(char character) {
+std::vector<bool> HuffmanTree::encode(char character) {
     // true: 1, false: 0
     std::vector<bool> data;
 
@@ -95,11 +95,6 @@ void HuffmanTree::encode(char character) {
         }
     }
 
-    std::for_each(data.rbegin(), data.rend(), [](bool d) {
-        if (d) {
-            std::cout << 1;
-        } else {
-            std::cout << 0;
-        }
-    });
+    std::reverse(data.begin(), data.end());
+    return data;
 }
