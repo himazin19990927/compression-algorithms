@@ -98,3 +98,20 @@ std::vector<bool> HuffmanTree::encode(char character) {
     std::reverse(data.begin(), data.end());
     return data;
 }
+
+char HuffmanTree::decode(const std::vector<bool> &code) {
+    Node node = this->nodes[this->root];
+    for (bool d : code) {
+        if (d) {
+            // 符号が1の場合
+            // 左側の子を参照する
+            node = this->nodes[node.left];
+        } else {
+            // 符号が0の場合
+            // 右側の子を参照する
+            node = this->nodes[node.right];
+        }
+    }
+    // 最終的にたどり着いたノードが結果となる
+    return node.data;
+}
