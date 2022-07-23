@@ -14,7 +14,6 @@ int main(int argc, char *argv[]) {
     std::string output_filename = argv[2];
 
     std::ifstream input_file(input_filename);
-    // input_file.open(input_filename, std::ios::in);
 
     Histgram hist;
 
